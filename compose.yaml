@@ -1,0 +1,14 @@
+
+services:
+  tabletap:
+    build: .
+    container_name: tabletap-container
+    ports:
+      - "5000:5000"
+    environment:
+      DATABASE_PATH: /app/data/tabletap.db
+    volumes:
+      - tabletap-data:/app/data
+
+volumes:
+  tabletap-data:

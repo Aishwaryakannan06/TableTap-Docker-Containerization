@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TableTap | Restaurant Ordering</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">🍽️ TableTap</div>
+        <div class="table-number">TABLE 01</div>
+    </header>
+
+    <main class="container">
+        <section class="welcome">
+            <p class="eyebrow">WELCOME TO OUR RESTAURANT</p>
+            <h1>Good food. Great moments.</h1>
+            <p>Explore our menu and order your favourites.</p>
+        </section>
+
+        <section class="menu-section">
+            <h2>Our Menu</h2>
+
+            <div class="categories">
+                <button class="category active" data-category="All">All</button>
+                <button class="category" data-category="Starters">Starters</button>
+                <button class="category" data-category="Main Course">Main Course</button>
+                <button class="category" data-category="Drinks">Drinks</button>
+                <button class="category" data-category="Desserts">Desserts</button>
+            </div>
+
+            <div class="menu-grid" id="menuGrid"></div>
+        </section>
+
+        <aside class="cart">
+            <h2>Your Order</h2>
+            <div id="cartItems">
+                <p class="empty">Your cart is empty.</p>
+            </div>
+            <div class="total">
+                <span>Total</span>
+                <strong id="total">₹0</strong>
+            </div>
+            <button id="orderButton" class="order-button">
+                Place Order
+            </button>
+            <p id="message"></p>
+        </aside>
+    
+        <section class="bill-split">
+            <h2>Split Your Bill</h2>
+            <p class="split-description">
+                Sharing a meal? Divide your bill easily!
+            </p>
+
+            <div class="split-summary">
+                <span>Bill Total</span>
+                <strong id="splitTotal">₹0</strong>
+            </div>
+
+            <label for="splitMethod">Choose splitting method</label>
+            <select id="splitMethod">
+                <option value="equal">Equal Split</option>
+                <option value="items">Split by Items</option>
+                <option value="custom">Custom Split</option>
+            </select>
+
+            <div id="splitContent"></div>
+        </section>
+</main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
